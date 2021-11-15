@@ -11,22 +11,6 @@
 				"type": "constructor"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "requested",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "available",
-						"type": "uint256"
-					}
-				],
-				"name": "NotEnoughFunds",
-				"type": "error"
-			},
-			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -78,6 +62,37 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getPayments",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "recipient",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct VolcanoCoin.Payment[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "increaseSupply",
 				"outputs": [],
@@ -101,12 +116,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "recipient",
+						"name": "_recipient",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "_amount",
 						"type": "uint256"
 					}
 				],
@@ -144,11 +159,11 @@
 	},
 	"sources": {
 		"contracts/VolcanoCoin.sol": {
-			"keccak256": "0xe6b7796287ad50a1b34e1dae96384671aaf834d625974d3c0fd6c31641be3756",
+			"keccak256": "0x833a3e8b7c7eadb43a24300f5abbdc58b9554a89bca2e77b8a4c3fc700f97b35",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://41114c5409add3ebaddcc2b9e8410706c2f26c4b17296b2029ae32d444f8ea89",
-				"dweb:/ipfs/QmPP9JHFp7DwTimB9CDQ92wCPhVy8VbLdPSJzMsWjFCA7i"
+				"bzz-raw://2c7a82084abe3cf0101c4ddc1bade3237fffd0f308803e37e357aa71fa7abeb1",
+				"dweb:/ipfs/QmT7UQ4DJ3cQbCQ15NRgnonmQZ6gRHp1yYXvEC3S8whNJs"
 			]
 		}
 	},

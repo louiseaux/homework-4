@@ -8,9 +8,15 @@ contract VolcanoCoin {
     address owner;
     
     mapping(address => uint) public balance;
+    mapping(address => Payment[]) payments;
+    
     event Supply_increase(uint indexed);
     event Transfer(address, uint);
-    error NotEnoughFunds(uint requested, uint available);
+    
+    struct Payment {
+        address recipient;
+        uint amount;
+    }
     
     constructor() {
         owner = msg.sender;
@@ -23,6 +29,10 @@ contract VolcanoCoin {
         }
     }
     
+    function getPayments(address user) public view returns (Payment[] memory) {
+        return payments[user]; // returns tuple
+    }
+    
     function totalSupply() public view returns (uint) {
         return supply;
     }
@@ -32,14 +42,17 @@ contract VolcanoCoin {
         emit Supply_increase(supply);
     }
     
-    function transfer(address recipient, uint amount) public {
-        require(amount > 0, "Amount must be > 0");
+    function transfer(address _recipient, uint _amount) public {
+        require(_amount > 0, "Amount must be > 0");
+        
         uint funds = balance[msg.sender];
-        if (funds < amount) {
-            revert NotEnoughFunds(amount, funds);
-        }
-        balance[msg.sender] -= amount;
-        balance[recipient] += amount;
-        emit Transfer(recipient, amount);
+        require(funds >= _amount, "Transfer amount exceeds funds");
+        
+        balance[msg.sender] -= _amount;
+        balance[_recipient] += _amount;
+        
+        payments[_recipient].push(Payment({recipient: _recipient, amount: _amount}));
+        
+        emit Transfer(_recipient, _amount);
     }
 }
