@@ -24,8 +24,14 @@
 				"type": "event"
 			},
 			{
-				"inputs": [],
-				"name": "getSupply",
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balance",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -41,6 +47,19 @@
 				"name": "increaseSupply",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -72,11 +91,11 @@
 	},
 	"sources": {
 		"contracts/VolcanoCoin.sol": {
-			"keccak256": "0x2b8fec20deee5cbf72421fa2f9a886e756a828278ffc6f496e4f064d3b54324f",
+			"keccak256": "0xfaa7d3b79f9c8b9c979bd13c6bd45675919a7d301ca0a3f33b90d648945ae8e6",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://d92d6df408e9cb9529b18d19b59792d81228041a4c0b2b37537805b43ad06642",
-				"dweb:/ipfs/QmUHYyMhDaWNhVDivie5TgadeGLSSr4LBMbsSEbW81kkqA"
+				"bzz-raw://ef9d84d543152e02aa1bf1c4715fd7041ba0fec142cbfc876707b7eff3db9e5c",
+				"dweb:/ipfs/QmYPxBbvtYvPs47RRoXfavBEzp67S7Wep85FtvAkb6C84Z"
 			]
 		}
 	},

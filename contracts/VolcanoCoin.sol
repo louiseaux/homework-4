@@ -7,6 +7,7 @@ contract VolcanoCoin {
     uint supply = 10000;
     address owner;
     
+    mapping(address => uint) public balance;
     event Supply_increase(uint indexed);
     
     constructor() {
@@ -19,7 +20,7 @@ contract VolcanoCoin {
         }
     }
     
-    function getSupply() public view returns (uint) {
+    function totalSupply() public view returns (uint) {
         return supply;
     }
     
