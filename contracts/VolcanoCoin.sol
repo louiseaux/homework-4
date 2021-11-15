@@ -12,6 +12,7 @@ contract VolcanoCoin {
     
     constructor() {
         owner = msg.sender;
+        balance[owner] = supply;
     }
     
     modifier onlyOwner {

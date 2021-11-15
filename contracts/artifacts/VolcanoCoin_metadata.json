@@ -91,11 +91,11 @@
 	},
 	"sources": {
 		"contracts/VolcanoCoin.sol": {
-			"keccak256": "0xfaa7d3b79f9c8b9c979bd13c6bd45675919a7d301ca0a3f33b90d648945ae8e6",
+			"keccak256": "0x6551052ee736bdefaea48c79fbc6c2947b2c80e4e14e4ec844d58ed3ff90d85e",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://ef9d84d543152e02aa1bf1c4715fd7041ba0fec142cbfc876707b7eff3db9e5c",
-				"dweb:/ipfs/QmYPxBbvtYvPs47RRoXfavBEzp67S7Wep85FtvAkb6C84Z"
+				"bzz-raw://28616a21f069c713c83c0b7ce8a8ebec9cc81a25405465ffd007ddd47e7900ba",
+				"dweb:/ipfs/QmWB5XNbouJXWrcvFrQErq4ZjQUnqpZEESFpnpnWPCaLQN"
 			]
 		}
 	},
