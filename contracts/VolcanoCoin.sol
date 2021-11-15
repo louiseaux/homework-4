@@ -9,6 +9,8 @@ contract VolcanoCoin {
     
     mapping(address => uint) public balance;
     event Supply_increase(uint indexed);
+    event Transfer(address, uint);
+    error NotEnoughFunds(uint requested, uint available);
     
     constructor() {
         owner = msg.sender;
@@ -28,5 +30,16 @@ contract VolcanoCoin {
     function increaseSupply() public onlyOwner {
         supply += 1000;
         emit Supply_increase(supply);
+    }
+    
+    function transfer(address recipient, uint amount) public {
+        require(amount > 0, "Amount must be > 0");
+        uint funds = balance[msg.sender];
+        if (funds < amount) {
+            revert NotEnoughFunds(amount, funds);
+        }
+        balance[msg.sender] -= amount;
+        balance[recipient] += amount;
+        emit Transfer(recipient, amount);
     }
 }

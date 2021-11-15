@@ -11,6 +11,22 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "requested",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "available",
+						"type": "uint256"
+					}
+				],
+				"name": "NotEnoughFunds",
+				"type": "error"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -21,6 +37,25 @@
 					}
 				],
 				"name": "Supply_increase",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
 				"type": "event"
 			},
 			{
@@ -61,6 +96,24 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -91,11 +144,11 @@
 	},
 	"sources": {
 		"contracts/VolcanoCoin.sol": {
-			"keccak256": "0x6551052ee736bdefaea48c79fbc6c2947b2c80e4e14e4ec844d58ed3ff90d85e",
+			"keccak256": "0xe6b7796287ad50a1b34e1dae96384671aaf834d625974d3c0fd6c31641be3756",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://28616a21f069c713c83c0b7ce8a8ebec9cc81a25405465ffd007ddd47e7900ba",
-				"dweb:/ipfs/QmWB5XNbouJXWrcvFrQErq4ZjQUnqpZEESFpnpnWPCaLQN"
+				"bzz-raw://41114c5409add3ebaddcc2b9e8410706c2f26c4b17296b2029ae32d444f8ea89",
+				"dweb:/ipfs/QmPP9JHFp7DwTimB9CDQ92wCPhVy8VbLdPSJzMsWjFCA7i"
 			]
 		}
 	},
